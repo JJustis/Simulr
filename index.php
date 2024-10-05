@@ -210,6 +210,12 @@
             const words = sentence.split(' ');
             return words.every(word => mathSymbols.test(word) || variablePattern.test(word));
         }
+ // Function to strip HTML tags from a given string
+        function stripHTMLTags(str) {
+            const temporaryDiv = document.createElement("div");
+            temporaryDiv.innerHTML = str;
+            return temporaryDiv.innerText || temporaryDiv.textContent || ""; // Return only the text content
+        }
 
  function solveEquation(equation) {
             try {
